@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Beaverhacks - Admin</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <h1>Admin</h1>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="registration.html">Participant Registration</a></li>
+      <li><a href="teamProject.html">Teams and Projects</a></li>
+      <li>Admin</li>
+    </ul>
+  </nav>
+  <form action="/" method="post" enctype="application/x-www-form-urlencoded">
+    <label>Add Hackathon</label>
+    <br>
+    <label for="startDate">Start Date</label>
+    <input type="date" name="startDate">
+    <label for="endDate">End Date</label>
+    <input type="date" name="endDate">
+    <button type="submit">submit</button>
+  </form>
+  <table class="table" id="hackathon">
+    <thead>
+      <tr>
+        <th>Hackathon Id</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>10/20/18</td>
+        <td>10/23/18</td>
+        <td>
+          <button>Edit</button>
+        </td>
+        <td>
+          <button>Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>01/05/18</td>
+        <td>01/08/18</td>
+        <td>
+          <button>Edit</button>
+        </td>
+        <td>
+          <button>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <form action="/" method="post" enctype="application/x-www-form-urlencoded">
+    <label>Add Judge</label>
+    <br>
+    <label for="firstName">First Name</label>
+    <input type="text" name="firstName">
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName">
+    <label for="email">Email</label>
+    <input type="email" name="email">
+    <label for="occupation">Occupation</label>
+    <input type="text" name="occupation">
+    <label for="employer">Employer</label>
+    <input type="text" name="employer">
+    <label for="hackathon">Hackathon</label>
+    <select name="hackathon" id="hackathon">
+      <option value="">choose hackathon</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+    <button type="submit">submit</button>
+  </form>
+  <table class="table" id="judge">
+    <thead>
+      <tr>
+        <th>Judge Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Occupation</th>
+        <th>Employer</th>
+        <th>Hackathons</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>4</td>
+        <td>Amy</td>
+        <td>Mastraccio</td>
+        <td>Software Engineer</td>
+        <td>HP</td>
+        <td>1, 2</td>
+        <td>
+          <button>Edit</button>
+        </td>
+        <td>
+          <button>Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Stan</td>
+        <td>Hoffman</td>
+        <td>Front-End Engineer</td>
+        <td>IBM</td>
+        <td>1</td>
+        <td>
+          <button>Edit</button>
+        </td>
+        <td>
+          <button>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table> 
+</body>
+</html>
