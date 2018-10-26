@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Beaverhacks - Registration</title>
-  <link rel="stylesheet" href="../css/styles.css">
+  <title>Beaver Hacks - Registration</title>
+  <link rel="stylesheet" href="css/styles2.css">
 </head>
 <body>
-  <h1>Beaverhacks</h1>
+  <h1><a href="index.html">Beaver Hacks</a></h1>
   <nav>
     <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li>Participant Registration</li>
-      <li><a href="teamProject.html">Teams and Projects</a></li>
+      <li>Registration</li>
+      <li><a href="teams.html">Teams</a></li>
+      <li><a href="projects.html">Projects</a></li>
       <li><a href="admin.html">Admin</a></li>
     </ul>
   </nav>
-  <h2>Participant Registration</h2>
+  <h2>Registration</h2>
   <div class="registration_form">
       <h3>Add Participant</h3>
       <form action="/" method="post" enctype="application/x-www-form-urlencoded">
@@ -28,10 +28,6 @@
               <input type="text" name="lastName">
           </div>
           <div class="form-group">
-              <label for="slackName">Slack Name</label>
-              <input type="text" name="slackName">
-          </div>
-          <div class="form-group">
               <label for="email">Email</label>
               <input type="email" name="email">
           </div>
@@ -40,90 +36,94 @@
          </div>
       </form>
   </div>
+  <br>
+  <div class=team_list>
+      <h3>Participants for Winter 2018 Hackathon</h3>
+      <form action="/" method="post">
+          <label for="search">Search</label>
+          <input type="text" name="search" id="search">
+          <select name="sortby" id="sortby">
+              <option value="">sort by</option>
+              <option value="1">First Name</option>
+              <option value="2">Last Name</option>
+          </select>
+          <select name="differentHackathon" id="differentHackathon">
+              <option value="">choose different hackathon</option>
+              <option value="1">Spring 2018</option>
+              <option value="2">Summer 2018</option>
+          </select>
+      </form>
+  <br><hr>
   <table class="table" id="participantTable">
     <thead>
       <tr>
-        <th>Participant Id</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>Slack Name</th>
         <th>Email</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>1</td>
         <td>John</td>
         <td>Hoffman</td>
-        <td>johnH</td>
         <td>hoofjo@oregonstate.edu</td>
         <td>
-          <button>Edit</button>
+          <button>Update</button>
         </td>
         <td>
           <button>Delete</button>
         </td>
       </tr>
       <tr>
-        <td>2</td>
         <td>Laura</td>
         <td>McKinney</td>
-        <td>mckinney</td>
         <td>mckinnel@oregonstate.edu</td>
         <td>
-          <button>Edit</button>
+          <button>Update</button>
         </td>
         <td>
           <button>Delete</button>
         </td>
       </tr>
       <tr>
-        <td>3</td>
         <td>Steve</td>
         <td>Garcia</td>
-        <td>SteveGarcia</td>
         <td>garciast@oregonstate.edu</td>
         <td>
-          <button>Edit</button>
+          <button>Update</button>
         </td>
         <td>
           <button>Delete</button>
         </td>
       </tr>
       <tr>
-        <td>4</td>
         <td>Mo</td>
         <td>Adlouni</td>
-        <td>adlouni</td>
         <td>adloumo@oregonstate.edu</td>
         <td>
-          <button>Edit</button>
+          <button>Update</button>
         </td>
         <td>
           <button>Delete</button>
         </td>
       </tr>
       <tr>
-        <td>5</td>
         <td>Tome</td>
         <td>Lee</td>
-        <td>TomLee</td>
         <td>leetom@oregonstate.edu</td>
         <td>
-          <button>Edit</button>
+          <button>Update</button>
         </td>
         <td>
           <button>Delete</button>
         </td>
       </tr>
       <tr>
-        <td>6</td>
         <td>Sue</td>
         <td>Taylor</td>
-        <td>superSue</td>
         <td>taylors@oregonstate.edu</td>
         <td>
-          <button>Edit</button>
+          <button>Update</button>
         </td>
         <td>
           <button>Delete</button>
@@ -131,5 +131,6 @@
       </tr>
     </tbody>
   </table>
+</div>
 </body>
 </html>

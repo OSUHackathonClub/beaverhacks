@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beaver Hacks - Teams</title>
+    <link rel="stylesheet" href="css/styles2.css">
+</head>
+<body>
+    <h1><a href="index.html">Beaver Hacks</a></h1>
+    <nav>
+        <ul>
+            <li><a href="registration.html">Registration</a></li>
+            <li>Teams</li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="admin.html">Admin</a></li>
+        </ul>
+    </nav>
+    <h2>Teams</h2>
+    <div class="team_form">
+        <h3>Add Team</h3>
+        <p><em>If your team is new, enter a team name, or if your team has competed in a previous hackathon, select your team name from dropdown.</em></p>
+        <form action="/" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="form-group">
+                <label for="name">Team Name</label>
+                <input type="text" name="teamName">
+                <label for="participant1">OR </label>
+                <select name="existingTeam" id="existingTeam">
+                    <option value="">choose existing team</option>
+                    <option value="1">Bug Hunters</option>
+                    <option value="2">Linux Legends</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="hackathon">Hackathon</label>
+                <select name="hackathon" id="hackathon">
+                    <option value="">choose hackathon</option>
+                    <option value="1">Winter 2018</option>
+                    <option value="2">Spring 2019</option>
+                </select>
+            </div>
+           <div class="form-group">
+               <button class="submit" type="submit">submit</button>
+           </div>
+        </form>
+    </div>
+    <div class=team_list>
+        <h3>Teams for Winter 2018 Hackathon</h3>
+        <form action="/" method="post">
+            <label for="search">Search</label>
+            <input type="text" name="search" id="search">
+            <select name="sortby" id="sortby">
+                <option value="">sort by</option>
+                <option value="1">Team Name</option>
+                <option value="2">Number of members</option>
+            </select>
+            <select name="differentHackathon" id="differentHackathon">
+                <option value="">choose different hackathon</option>
+                <option value="1">Spring 2018</option>
+                <option value="2">Summer 2018</option>
+            </select>
+        </form>
+        <br><hr>
+        <h4>Beaver Greats <button>add member</button> <button>edit team name</button> <button>delete team</button></h4>
+        <ul>
+            <li>Shelley McAllen <button>delete</button></li>
+            <li>Danny Powers <button>delete</button></li>
+            <li>Adam Sander <button>delete</button></li>
+        </ul>
+        <hr>
+        <h4>The Secs <button>add Member</button> <button>edit team name</button> <button>delete team</button></h4>
+        <ul>
+            <li>Kelly von Borstel <button>delete</button></li>
+            <li>Vinny Harris-Riviello <button>delete</button></li>
+        </ul>
+        <hr>
+        <h4>Cosmic Coders <button>add Member</button> <button>edit team name</button> <button>delete team</button></h4>
+        <ul>
+            <li>Tim Hardy <button>delete</button></li>
+            <li>Alex Chen <button>delete</button></li>
+            <li>Silvia Smith <button>delete</button></li>
+            <li>Jane Doe <button>delete</button></li>
+        </ul>
+    </div>   
+</body>
+</html>
