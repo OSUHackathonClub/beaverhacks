@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Beaver Hacks - Registration</title>
-  <link rel="stylesheet" href="css/styles2.css">
+  <link rel="stylesheet" href="assets/css/styles2.css">
 </head>
 <body>
   <h1><a href="index.html">Beaver Hacks</a></h1>
@@ -16,7 +16,7 @@
     </ul>
   </nav>
   <h2>Registration</h2>
-  <div class="registration_form">
+  <div class="registration-form">
       <h3>Add Participant</h3>
       <form action="/" method="post" enctype="application/x-www-form-urlencoded">
           <div class="form-group">
@@ -32,105 +32,63 @@
               <input type="email" name="email">
           </div>
          <div class="form-group">
-             <button type="submit">submit</button>
+             <button type="submit" id="add-participant-button">submit</button>
          </div>
+        <div class="form-group">
+          <button type="button" class="cancel-edit-button" id="cancel-editing-participant">cancel</button>
+        </div>
       </form>
   </div>
   <br>
-  <div class=team_list>
-      <h3>Participants for Winter 2018 Hackathon</h3>
+  <div class=list id="participant-list">
+      <h3>Participants</h3>
       <form action="/" method="post">
           <label for="search">Search</label>
           <input type="text" name="search" id="search">
-          <select name="sortby" id="sortby">
-              <option value="">sort by</option>
-              <option value="1">First Name</option>
-              <option value="2">Last Name</option>
-          </select>
-          <select name="differentHackathon" id="differentHackathon">
-              <option value="">choose different hackathon</option>
-              <option value="1">Spring 2018</option>
-              <option value="2">Summer 2018</option>
-          </select>
       </form>
-  <br><hr>
-  <table class="table" id="participantTable">
-    <thead>
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Hoffman</td>
-        <td>hoofjo@oregonstate.edu</td>
-        <td>
-          <button>Update</button>
-        </td>
-        <td>
-          <button>Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Laura</td>
-        <td>McKinney</td>
-        <td>mckinnel@oregonstate.edu</td>
-        <td>
-          <button>Update</button>
-        </td>
-        <td>
-          <button>Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Steve</td>
-        <td>Garcia</td>
-        <td>garciast@oregonstate.edu</td>
-        <td>
-          <button>Update</button>
-        </td>
-        <td>
-          <button>Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Mo</td>
-        <td>Adlouni</td>
-        <td>adloumo@oregonstate.edu</td>
-        <td>
-          <button>Update</button>
-        </td>
-        <td>
-          <button>Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Tome</td>
-        <td>Lee</td>
-        <td>leetom@oregonstate.edu</td>
-        <td>
-          <button>Update</button>
-        </td>
-        <td>
-          <button>Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <td>Sue</td>
-        <td>Taylor</td>
-        <td>taylors@oregonstate.edu</td>
-        <td>
-          <button>Update</button>
-        </td>
-        <td>
-          <button>Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+      <br><hr>
+      <table class="participant-table" id="">
+        <thead>
+          <tr>
+            <th class="id-hidden">Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody class="participant-table-body" id="participant-table-body"></tbody>
+      </table>
+  </div>
+
+  <!-- The Modal -->
+  <div id="update-modal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <!-- Update Form -->
+      <h3>Update Participant</h3>
+      <form action="/" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" id="update-firstname">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="update-lastname">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="update-email">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="form-button">Save</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <!--javascript-->
+  <script src="assets/javascript/script.js"></script>
 </body>
 </html>
