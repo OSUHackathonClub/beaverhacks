@@ -16,25 +16,54 @@
     </ul>
   </nav>
   <h2>Admin</h2>
-  <div class="hackathon_form">
+  <div class="add_hackathon_form">
       <h3>Add Hackathon</h3>
       <form action="/" method="post" enctype="application/x-www-form-urlencoded">
           <div class="form-group">
               <label for="term">Term</label>
               <select name="term" id="term">
-                  <option value="">choose term</option>
-                  <option value="1">Winter</option>
-                  <option value="2">Spring</option>
-                  <option value="2">Summer</option>
-                  <option value="2">Fall</option>
+                  <option value="">Choose Term</option>
+                  <option value="winter">Winter</option>
+                  <option value="spring">Spring</option>
+                  <option value="summer">Summer</option>
+                  <option value="fall">Fall</option>
               </select>
           </div>
           <div class="form-group">
               <label for="year">Year</label>
               <select name="year" id="year">
-                  <option value="">choose year</option>
-                  <option value="1">2018</option>
-                  <option value="2">2019</option>
+                  <option value="">Choose Year</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+              </select>
+          </div>
+          <div class="form-group">
+             <button type="submit">submit</button>
+          </div>
+      </form>
+  </div>
+  <br>
+  <div class="set_current_hackathon_form">
+      <h3>Set Current Hackathon</h3>
+      <form action="/" method="post" enctype="application/x-www-form-urlencoded">
+          <div class="form-group">
+              <label for="term">Term</label>
+              <select name="term" id="term">
+                  <option value="">Choose Term</option>
+                  <option value="winter">Winter</option>
+                  <option value="spring">Spring</option>
+                  <option value="summer">Summer</option>
+                  <option value="fall">Fall</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <label for="year">Year</label>
+              <select name="year" id="year">
+                  <option value="">Choose Year</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
               </select>
           </div>
           <div class="form-group">
@@ -47,11 +76,6 @@
   <form action="/" method="post">
       <label for="search">Search</label>
       <input type="text" name="search" id="search">
-      <select name="sortby" id="sortby">
-          <option value="">sort by</option>
-          <option value="1">Term</option>
-          <option value="2">Year</option>
-      </select>
   </form>
   <hr>
   <table class="table" id="hackathonTable">
@@ -60,16 +84,12 @@
         <th>Term</th>
         <th>Year</th>
         <th></th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Winter</td>
         <td>2018</td>
-        <td>
-          <button>Update</button>
-        </td>
         <td>
           <button>Delete</button>
         </td>
@@ -78,9 +98,6 @@
         <td>Fall</td>
         <td>2018</td>
         <td>
-          <button>Update</button>
-        </td>
-        <td>
           <button>Delete</button>
         </td>
       </tr>
@@ -88,115 +105,10 @@
         <td>Spring</td>
         <td>2018</td>
         <td>
-          <button>Update</button>
-        </td>
-        <td>
           <button>Delete</button>
         </td>
       </tr>
     </tbody>
   </table>
-  <h3>Participant Project Table</h3>
-  <div class="form-group">
-      <select name="participantId" id="participantId">
-          <option value="">choose participant id</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-      </select>
-      <select name="projectId" id="projectId">
-          <option value="">choose project id</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-      </select>
-      <select name="relationship" id="relationship">
-          <option value="">choose action</option>
-          <option value="1">Add Relationship</option>
-          <option value="2">Delete Relationship</option>
-      </select>
-      <button class="submit" type="submit">submit</button>
-  </div>
-  <hr>
-  <h3>Team Hackathon Table</h3>
-  <div class="form-group">
-      <select name="teamId" id="teamId">
-          <option value="">choose team id</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-      </select>
-      <select name="hackathonId" id="hackathonId">
-          <option value="">choose hackathon id</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-      </select>
-      <select name="relationship" id="relationship">
-          <option value="">choose action</option>
-          <option value="1">Add Relationship</option>
-          <option value="2">Delete Relationship</option>
-      </select>
-      <button class="submit" type="submit">submit</button>
-  </div>
-  <hr>
-  <h3>Participant Hackathon Table</h3>
-  <div class="form-group">
-      <select name="participantId" id="participantId">
-          <option value="">choose participant id</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-      </select>
-      <select name="hackathonId" id="hackathonId">
-          <option value="">choose hackathon id</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-      </select>
-      <select name="relationship" id="relationship">
-          <option value="">choose action</option>
-          <option value="1">Add Relationship</option>
-          <option value="2">Delete Relationship</option>
-      </select>
-      <button class="submit" type="submit">submit</button>
-  </div>
-  <hr>
-  <h3>Participant Team Table</h3>
-  <div class="form-group">
-      <select name="participantId" id="participantId">
-          <option value="">choose participant id</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-      </select>
-      <select name="teamId" id="teamId">
-          <option value="">choose team id</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-      </select>
-      <select name="relationship" id="relationship">
-          <option value="">choose action</option>
-          <option value="1">Add Relationship</option>
-          <option value="2">Delete Relationship</option>
-      </select>
-      <button class="submit" type="submit">submit</button>
-  </div>
 </body>
 </html>
