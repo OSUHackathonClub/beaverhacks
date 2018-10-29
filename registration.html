@@ -43,8 +43,15 @@
   <div class=list id="participant-list">
       <h3>Participants</h3>
       <form action="/" method="post">
-          <label for="search">Search</label>
-          <input type="text" name="search" id="search">
+          <div class="form-group">
+              <label for="hackathon">Filter by hackathon</label>
+              <select name="term" id="term">
+                  <option value="">Choose Hackathon</option>
+                  <option value="winter">Winter 2018</option>
+                  <option value="fall">Fall 2018</option>
+                  <option value="summer">Summer 2018</option>
+              </select>
+          </div>
       </form>
       <br><hr>
       <table class="participant-table" id="">
@@ -68,7 +75,11 @@
       <span class="close">&times;</span>
       <!-- Update Form -->
       <h3>Update Participant</h3>
-      <form action="/" method="post" enctype="application/x-www-form-urlencoded">
+      <form id="participant-update-form"  action="/" method="post" enctype="application/x-www-form-urlencoded">
+          <div class="id-hidden">
+              <label for="participantId">Id</label>
+              <input type="text" name="participantId" id="update-participant-id">
+          </div>
         <div class="form-group">
           <label for="firstName">First Name</label>
           <input type="text" name="firstName" id="update-firstname">
@@ -82,7 +93,7 @@
           <input type="email" name="email" id="update-email">
         </div>
         <div class="form-group">
-          <button type="submit" class="form-button">Save</button>
+          <button class="form-button" onclick="getFormData()">Save</button>
         </div>
       </form>
     </div>

@@ -69,6 +69,11 @@ td {
   display: none;
 }
 
+/* Update Form */
+#participant-update-form .id-hidden {
+  display: none;
+}
+
 /* Modal Edit View */
 .modal {
   display: none; /* Hidden by default */

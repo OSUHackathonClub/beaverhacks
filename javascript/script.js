@@ -1,18 +1,24 @@
+/** Registration Page Script**/
+
 // is current hackathon an attribute? how do we make it persist
 var currentHackathon = "Winter 2018";
+var currentHackathonParticipants = [];
+
 var modal = document.getElementById('update-modal');
 
 document.addEventListener('DOMContentLoaded', configureCurrentHackathon(currentHackathon));
 
 document.addEventListener('DOMContentLoaded', bindModalElements);
 
+//document.addEventListener('DOMContentLoaded', bindButtons);
+
 
 function configureCurrentHackathon(currentHackathon) {
     let list = document.getElementById('participant-list');
     let title = list.childNodes[1];
-    console.log(title);
-    title.textContent += (" for " + currentHackathon + " Hackathon");
-    populateParticipantTable(getParticipants());
+    title.textContent = "Participants for " + currentHackathon + " Hackathon";
+    currentHackathonParticipants = getParticipants();
+    populateParticipantTable(currentHackathonParticipants);
 }
 
 
@@ -60,7 +66,7 @@ function createRow(participant, index) {
     let deleteCell = document.createElement('td');
     let deleteButton = document.createElement('button');
     deleteButton.innerText = "Delete";
-    deleteButton.addEventListener('click', deleteRelationship);
+    //deleteButton.addEventListener('click', deleteRelationship);
     row.appendChild(deleteButton);
 
     table.appendChild(row);
@@ -77,10 +83,10 @@ function deleteRelationship(id) {
 function openUpdateModal(target) {
     // Get the modal
     let id = target.parentNode.firstChild.textContent;
-    console.log("get data for participant: " + id);
     modal.style.display = "block";
     populateUpdateForm(id);
 }
+
 
 // When the user clicks the button, open the modal
 function bindModalElements() {
@@ -94,15 +100,56 @@ function bindModalElements() {
     }
 }
 
+function getFormData() {
+
+    let formData = document.getElementById("participant-update-form");
+
+    var participantData = [];
+    for(let i = 0; i <= 4; i++) {
+        participantData.push(formData[i].value);
+    }
+
+
+    //updateRow(id, firstName, lastName, email);
+    updateRow(participantData);
+    event.preventDefault();
+    closeUpdateView();
+}
+
+function updateRow(data) {
+
+    let table = document.getElementById('participant-table-body');
+    let row = table.children[data[0]-1];
+    let cells = row.getElementsByTagName('td');
+
+    for(let i = 0; i < cells.length; i++) {
+        cells[i].textContent = data[i];
+    }
+}
 
 
 function closeUpdateView() {
     modal.style.display = "none";
 }
 
+function updateParticipantData(formData) {
+    let inputs = formData.getElementsByTagName('input');
+    let firstName = inputs[0].textContent;
+    let lastName = inputs[1].textContent;
+    let email = inputs[2].textContent;
+    console.log(inputs[0]);
+    console.log(firstName);
+    console.log(lastName);
+    console.log(email);
+}
+
 
 function populateUpdateForm(id) {
     let participant = getParticipants()[id-1];
+
+    let updateId = document.getElementById('update-participant-id');
+    updateId.value = id;
+
     let updateFirstName = document.getElementById('update-firstname');
     updateFirstName.value = participant.firstName;
 
