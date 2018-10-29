@@ -15,8 +15,8 @@
             <li><a href="admin.html">Admin</a></li>
         </ul>
     </nav>
-    <h2>Projects</h2>
-    <div class="project_form">
+    <h2 id="project-by-hackathon">Projects</h2>
+    <div class="project-form">
         <h3>Add Project</h3>
         <p><em>Your team must be added on <a href="teams.html">teams</a> page before you can add a project.</em></p>
         <form action="/" method="post" enctype="application/x-www-form-urlencoded">
@@ -27,14 +27,6 @@
             <div class="form-group">
                 <label for="devpost">Devpost Link</label>
                 <input type="text" name="devpost" id="devpost">
-            </div>
-            <div class="form-group">
-                <label for="hackathon">Hackathon</label>
-                <select name="hackathon" id="hackathon">
-                    <option value="">choose hackathon</option>
-                    <option value="1">Winter 2018</option>
-                    <option value="2">Spring 2019</option>
-                </select>
             </div>
             <div class="form-group">
                 <label for="team">Team</label>
@@ -50,11 +42,18 @@
             </div>
         </form>
     </div>
-    <div class=team_list>
+    <div class=team-list>
         <h3>Projects for Winter 2018 Hackathon</h3>
         <form action="/" method="post">
-            <label for="search">Search</label>
-            <input type="text" name="search" id="search">
+            <div class="form-group">
+                <label for="hackathon">Filter by hackathon</label>
+                <select name="term" id="term">
+                    <option value="">Choose Hackathon</option>
+                    <option value="winter">Winter 2018</option>
+                    <option value="fall">Fall 2018</option>
+                    <option value="summer">Summer 2018</option>
+                </select>
+            </div>
         </form>
         <br><hr>
         <h4>Project: Video Sync <button>Edit Project Name</button> <button>Delete Project</button></h4>

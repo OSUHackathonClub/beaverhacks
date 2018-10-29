@@ -16,7 +16,7 @@
         </ul>
     </nav>
     <h2>Teams</h2>
-    <div class="team_form">
+    <div class="team-form">
         <h3>Add Team</h3>
         <p><em>If your team is new, enter a team name, or if your team has competed in a previous hackathon, select your team name from dropdown.</em></p>
         <form action="/" method="post" enctype="application/x-www-form-urlencoded">
@@ -35,11 +35,18 @@
            </div>
         </form>
     </div>
-    <div class=team_list>
+    <div class=team-list>
         <h3>Teams for Winter 2018 Hackathon</h3>
-        <form action="/" method="post">
-            <label for="search">Search</label>
-            <input type="text" name="search" id="search">
+        <form>
+            <div class="form-group">
+                <label for="hackathon">Filter by hackathon</label>
+                <select name="term" id="term">
+                    <option value="">Choose Hackathon</option>
+                    <option value="winter">Winter 2018</option>
+                    <option value="fall">Fall 2018</option>
+                    <option value="summer">Summer 2018</option>
+                </select>
+            </div>
         </form>
         <br><hr>
         <h4>Beaver Greats <button>Edit Team Name</button> <button>Delete Team</button></h4>
